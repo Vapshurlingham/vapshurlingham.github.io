@@ -7,6 +7,27 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
+
+    .product {
+  position: relative; /* necesario para posicionar la franja */
+}
+
+.product-unavailable {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #d1002c;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.4rem 0;
+  text-align: center;
+  z-index: 2;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+    
     :root {
       --violeta: #c9a4f4;
       --violeta-oscuro: #a26ed4;
@@ -469,10 +490,10 @@
     <div class="catalog-grid" id="catalogo-grid">
       <!-- P1 -->
       <div class="product">
-        <a href="40K DRAGON STRAWNANA.html">
-         
-          <div class="product-unavailable">Todavía no disponible</div>
 
+        <div class="product-unavailable">Todavía no disponible</div>
+
+        <a href="40K DRAGON STRAWNANA.html">
           <img src="DRAGON STRAWNANA.png" alt="POD ELFBAR ICE KING 40K DRAGON STRAWNANA">
           <div class="product-info">
             <h3>POD ELFBAR ICE KING 40K DRAGON STRAWNANA</h3>
@@ -482,10 +503,10 @@
       </div>
       <!-- P2 -->
       <div class="product">
-        <a href="40K BLUE RAZZ .html">
 
-          <div class="product-unavailable">Todavía no disponible</div>
-
+         <div class="product-unavailable">Todavía no disponible</div>
+        
+        <a href="40K BLUE RAZZ .html">      
           <img src="BLUE RAZZ.png" alt="POD ELFBAR ICE KING 40K BLUE RAZZ">
           <div class="product-info">
             <h3>POD ELFBAR ICE KING 40K BLUE RAZZ</h3>
@@ -495,10 +516,10 @@
       </div>
       <!-- P3 -->
       <div class="product">
-        <a href="40K MANGO MAGIC.html">
 
           <div class="product-unavailable">Todavía no disponible</div>
-
+        
+        <a href="40K MANGO MAGIC.html">       
           <img src="MANGO MAGIC.png" alt="POD ELFBAR ICE KING 40K MANGO MAGIC">
           <div class="product-info">
             <h3>POD ELFBAR ICE KING 40K MANGO MAGIC</h3>
@@ -508,10 +529,10 @@
       </div>
       <!-- P4 -->
       <div class="product">
-        <a href="40K SOUR LUSH GUMMY.html">
 
           <div class="product-unavailable">Todavía no disponible</div>
-
+        
+        <a href="40K SOUR LUSH GUMMY.html">       
           <img src="SOUR LUSH GUMMY.png" alt="POD ELFBAR ICE KING 40K SOUR LUSH GUMMY">
           <div class="product-info">
             <h3>POD ELFBAR ICE KING 40K SOUR LUSH GUMMY</h3>
@@ -521,10 +542,10 @@
       </div>
       <!-- P5 -->
       <div class="product">
-        <a href="40K CHERRY FUSE.html">
 
-          <div class="product-unavailable">Todavía no disponible</div>
-          
+            <div class="product-unavailable">Todavía no disponible</div>
+        
+        <a href="40K CHERRY FUSE.html">       
           <img src="CHERRY FUSE.png" alt="POD ELFBAR ICE KING 40K CHERRY FUSE">
           <div class="product-info">
             <h3>POD ELFBAR ICE KING 40K CHERRY FUSE</h3>
