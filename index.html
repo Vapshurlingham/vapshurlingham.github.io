@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vapshur</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    :root {
+      --violeta: #c9a4f4;
+      --violeta-oscuro: #a26ed4;
+      --blanco: #ffffff;
+      --glass: rgba(255, 255, 255, 0.35);
+      --negro: #222222;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: linear-gradient(135deg, #fdfbff, #f2e6ff);
+      color: var(--negro);
+      line-height: 1.6;
+      min-height: 100vh;
+      padding-top: 80px;
+    }
+
+    header {
+      background: rgba(201, 164, 244, 0.85);
+      backdrop-filter: blur(12px);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--blanco);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 10;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-bottom-left-radius: 1rem;
+      border-bottom-right-radius: 1rem;
+    }
+
+    header h1 a {
+      font-size: 2rem;
+      text-decoration: none;
+      color: var(--blanco);
+    }
+
+    nav a {
+      color: var(--blanco);
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: 500;
+      transition: transform 0.3s ease, color 0.3s;
+      display: inline-block;
+    }
+
+    nav a:hover {
+      transform: scale(1.2);
+      color: #fdfbff;
+    }
+
+    h2 {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    section {
+      padding: 3rem 1rem;
+      max-width: 1000px;
+      margin: 2rem auto;
+      border-radius: 1.5rem;
+      background: var(--glass);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      animation: fadeInUp 1s ease forwards;
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    .intro h2, .about h2, .contact h2, .catalog h2 {
+      animation-delay: 0.3s;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .search-bar {
+      margin: 2rem auto;
+      max-width: 600px;
+      display: flex;
+      justify-content: center;
+      background: var(--glass);
+      border-radius: 1rem;
+      padding: 0.5rem;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .search-bar input {
+      width: 100%;
+      padding: 0.75rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      background-color: #fff;
+      outline: none;
+    }
+
+    .catalog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .product {
+      background: var(--glass);
+      backdrop-filter: blur(10px);
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-align: center;
+    }
+
+    .product:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 12px 25px rgba(160, 120, 255, 0.25);
+    }
+
+    .product img {
+      max-width: 100%;
+      max-height: 250px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .product-info {
+      padding: 1rem;
+      background-color: rgba(255, 255, 255, 0.6);
+      border-top: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .product-info h3 {
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    .price {
+      color: var(--violeta-oscuro);
+      font-weight: bold;
+    }
+
+    .product a {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: rgba(201, 164, 244, 0.85);
+      color: var(--blanco);
+      backdrop-filter: blur(10px);
+      border-top-left-radius: 1.5rem;
+      border-top-right-radius: 1.5rem;
+      margin-top: 4rem;
+      animation: fadeInUp 1s ease forwards;
+      animation-delay: 1s;
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    a {
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: var(--violeta-oscuro);
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      header h1 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+      }
+      nav a {
+        margin: 0 0.5rem 0.5rem 0;
+      }
+    }
+  </style>
+</head>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vapshur</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    :root {
+      --violeta: #c9a4f4;
+      --violeta-oscuro: #a26ed4;
+      --blanco: #ffffff;
+      --glass: rgba(255, 255, 255, 0.35);
+      --negro: #222222;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: linear-gradient(135deg, #fdfbff, #f2e6ff);
+      color: var(--negro);
+      line-height: 1.6;
+      min-height: 100vh;
+      padding-top: 80px;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: rgba(201, 164, 244, 0.85);
+      backdrop-filter: blur(12px);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--blanco);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 10;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-bottom-left-radius: 1rem;
+      border-bottom-right-radius: 1rem;
+    }
+
+    header h1 a {
+      font-size: 2rem;
+      text-decoration: none;
+      color: var(--blanco);
+    }
+
+    nav a {
+      color: var(--blanco);
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: 500;
+      transition: transform 0.3s ease, color 0.3s;
+      display: inline-block;
+    }
+
+    nav a:hover {
+      transform: scale(1.2);
+      color: #fdfbff;
+    }
+
+    h2 {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    section {
+      padding: 3rem 1rem;
+      max-width: 1000px;
+      margin: 2rem auto;
+      border-radius: 1.5rem;
+      background: var(--glass);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      animation: fadeInUp 1s ease forwards;
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    .intro h2, .about h2, .contact h2, .catalog h2 {
+      animation-delay: 0.3s;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .search-bar {
+      margin: 2rem auto;
+      max-width: 600px;
+      display: flex;
+      justify-content: center;
+      background: var(--glass);
+      border-radius: 1rem;
+      padding: 0.5rem;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .search-bar input {
+      width: 100%;
+      padding: 0.75rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      background-color: #fff;
+      outline: none;
+    }
+
+    .catalog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .product {
+      background: var(--glass);
+      backdrop-filter: blur(10px);
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-align: center;
+    }
+
+    .product:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 12px 25px rgba(160, 120, 255, 0.25);
+    }
+
+    .product img {
+      max-width: 100%;
+      max-height: 250px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .product-info {
+      padding: 1rem;
+      background-color: rgba(255, 255, 255, 0.6);
+      border-top: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .product-info h3 {
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    .price {
+      color: var(--violeta-oscuro);
+      font-weight: bold;
+    }
+
+    .product a {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: rgba(201, 164, 244, 0.85);
+      color: var(--blanco);
+      backdrop-filter: blur(10px);
+      border-top-left-radius: 1.5rem;
+      border-top-right-radius: 1.5rem;
+      margin-top: 4rem;
+      animation: fadeInUp 1s ease forwards;
+      animation-delay: 1s;
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    a {
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: var(--violeta-oscuro);
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      header h1 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+      }
+      nav a {
+        margin: 0 0.5rem 0.5rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1><a href="#inicio">vapshur</a></h1>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#nosotros">Sobre Nosotros</a>
+      <a href="#catalogo">Catálogo</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+
+  <section class="intro" id="inicio">
+    <h2>Bienvenidx a vapshur</h2>
+    <p>Vapes electrónicos de calidad, estilo y sabor. Minimalismo y elegancia en cada puff.</p>
+  </section>
+
+
+  <div class="search-bar">
+    <input type="text" id="search-input" placeholder="Buscar productos...">
+  </div>
+
+
+  <section class="catalog" id="catalogo">
+    <h2>Catálogo</h2>
+    <div class="catalog-grid" id="catalogo-grid">
+      <!-- P1 -->
+      <div class="product">
+        <a href="40K DRAGON STRAWNANA.html">
+          <img src="DRAGON STRAWNANA.png" alt="POD ELFBAR ICE KING 40K DRAGON STRAWNANA">
+          <div class="product-info">
+            <h3>POD ELFBAR ICE KING 40K DRAGON STRAWNANA</h3>
+            <p class="price">$30.000</p>
+          </div>
+        </a>
+      </div>
+      <!-- P2 -->
+      <div class="product">
+        <a href="40K BLUE RAZZ .html">
+          <img src="BLUE RAZZ.png" alt="POD ELFBAR ICE KING 40K BLUE RAZZ">
+          <div class="product-info">
+            <h3>POD ELFBAR ICE KING 40K BLUE RAZZ</h3>
+            <p class="price">$30.000</p>
+          </div>
+        </a>
+      </div>
+      <!-- P3 -->
+      <div class="product">
+        <a href="40K MANGO MAGIC.html">
+          <img src="MANGO MAGIC.png" alt="POD ELFBAR ICE KING 40K MANGO MAGIC">
+          <div class="product-info">
+            <h3>POD ELFBAR ICE KING 40K MANGO MAGIC</h3>
+            <p class="price">$30.000</p>
+          </div>
+        </a>
+      </div>
+      <!-- P4 -->
+      <div class="product">
+        <a href="40K SOUR LUSH GUMMY.html">
+          <img src="SOUR LUSH GUMMY.png" alt="POD ELFBAR ICE KING 40K SOUR LUSH GUMMY">
+          <div class="product-info">
+            <h3>POD ELFBAR ICE KING 40K SOUR LUSH GUMMY</h3>
+            <p class="price">$30.000</p>
+          </div>
+        </a>
+      </div>
+      <!-- P5 -->
+      <div class="product">
+        <a href="40K CHERRY FUSE.html">
+          <img src="CHERRY FUSE.png" alt="POD ELFBAR ICE KING 40K CHERRY FUSE">
+          <div class="product-info">
+            <h3>POD ELFBAR ICE KING 40K CHERRY FUSE</h3>
+            <p class="price">$30.000</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="about" id="nosotros">
+    <h2>Sobre Nosotras</h2>
+    <p>Somos Mara y Cami, fundadoras de vapshur. Creamos este emprendimiento para ofrecerte lo mejor en vapes con diseño único y sabores inolvidables.</p>
+  </section>
+
+
+  <section class="contact" id="contacto">
+    <h2>Cómo Comprar</h2>
+    <p>Hacenos tu pedido por Instagram o WhatsApp. ¡Respondemos al toque!</p>
+    <p>
+      <a href="https://instagram.com/vapshur" target="_blank">
+        <i class="fab fa-instagram" style="color:#c13584; font-size: 1.5rem; margin-right: 0.5rem;"></i>@vapshur
+      </a>
+    </p>
+    <p>
+      <a href="https://wa.me/5491122980332?text=Hola!%20estoy%20interesado%20en%20...%20%C2%BFme%20podr%C3%ADas%20dar%20m%C3%A1s%20info%3F" target="_blank">
+        <i class="fab fa-whatsapp" style="color:#25D366; font-size: 1.5rem; margin-right: 0.5rem;"></i>+5491122980332
+      </a>
+    </p>
+  </section>
+
+
+  <footer>
+    <p>&copy; 2025 vapshur. Todos los derechos reservados.</p>
+  </footer>
+
+
+  <script>
+    const input = document.getElementById('search-input');
+    const products = document.querySelectorAll('.catalog-grid .product');
+
+
+    input.addEventListener('input', () => {
+      const value = input.value.toLowerCase();
+      products.forEach(product => {
+        const text = product.textContent.toLowerCase();
+        product.style.display = text.includes(value) ? '' : 'none';
+      });
+    });
+
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationPlayState = 'running';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+
+    document.querySelectorAll('section, footer').forEach(el => {
+      el.style.animationPlayState = 'paused';
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
+

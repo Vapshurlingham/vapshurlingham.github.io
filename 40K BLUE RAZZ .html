@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>POD ELFBAR ICE KING 40K BLUE RAZZ - Vapshur</title>
+
+  <!-- Fuentes y estilos externos -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Estilos -->
+  <style>
+    :root {
+      --violeta: #c9a4f4;
+      --violeta-oscuro: #a06fd3;
+      --blanco: #ffffff;
+      --gris: #f5f5f5;
+      --negro: #222222;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: var(--blanco);
+      color: var(--negro);
+      padding: 0;
+      margin: 0;
+    }
+
+    header {
+      background-color: var(--violeta);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--blanco);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    header h1 a {
+      font-size: 2rem;
+      text-decoration: none;
+      color: var(--blanco);
+    }
+
+    nav a {
+      color: var(--blanco);
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: 500;
+      transition: transform 0.3s ease, color 0.3s;
+      display: inline-block;
+    }
+
+    nav a:hover {
+      transform: scale(1.2);
+      color: var(--gris);
+    }
+
+    .glass-container {
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      padding: 2rem;
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.3);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      max-width: 1000px;
+      width: 90%;
+      margin: 4rem auto;
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .glass-container img {
+      max-width: 400px;
+      height: auto;
+      border-radius: 12px;
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .info h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--violeta-oscuro);
+    }
+
+    .info p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .info a {
+      display: inline-block;
+      background-color: var(--violeta);
+      color: var(--blanco);
+      padding: 0.75rem 1.5rem;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+      text-align: center;
+    }
+
+    .info a:hover {
+      background-color: var(--violeta-oscuro);
+    }
+
+    @media (max-width: 768px) {
+      .glass-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .glass-container img {
+        max-width: 100%;
+      }
+    }
+
+    
+  header h1 a {
+  font-size: 2rem;
+  text-decoration: none;
+  color: var(--gris); /* antes era blanco */
+  font-weight: 700;
+}
+header h1 a:hover {
+  color: var(--violeta-oscuro);
+}
+.descripcion {
+  max-width: 900px;
+  margin: 2rem auto 4rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  border: 1px solid rgba(200, 200, 255, 0.2);
+  backdrop-filter: blur(5px);
+}
+
+.contenido-descripcion h2 {
+  color: var(--violeta-oscuro);
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.contenido-descripcion h3 {
+  color: var(--violeta);
+  font-size: 1.4rem;
+  margin-top: 1.5rem;
+}
+
+.contenido-descripcion p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.contenido-descripcion ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  font-size: 1.05rem;
+}
+
+.contenido-descripcion li {
+  margin-bottom: 0.5rem;
+}
+.descripcion {
+  max-width: 900px;
+  margin: 2rem auto 4rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  border: 1px solid rgba(200, 200, 255, 0.2);
+  backdrop-filter: blur(5px);
+  animation: fadeIn 1s ease;
+}
+
+.icono-deco {
+  font-size: 3rem;
+  color: var(--violeta-oscuro);
+  text-align: center;
+  margin-bottom: 1rem;
+  animation: spinFade 3s infinite linear;
+}
+
+@keyframes spinFade {
+  0% {
+    transform: rotate(0deg);
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: rotate(360deg);
+    opacity: 0.8;
+  }
+}
+
+.contenido-descripcion h2 {
+  color: var(--violeta-oscuro);
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.contenido-descripcion h3 {
+  color: var(--violeta);
+  font-size: 1.4rem;
+  margin-top: 1.5rem;
+}
+
+.contenido-descripcion p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.contenido-descripcion ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  font-size: 1.05rem;
+}
+
+.contenido-descripcion li {
+  margin-bottom: 0.5rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1><a href="index.html#inicio">vapshur</a></h1>
+    <nav>
+      <a href="index.html#inicio">Inicio</a>
+      <a href="index.html#nosotros">Sobre Nosotras</a>
+      <a href="index.html#catalogo">Catálogo</a>
+      <a href="index.html#contacto">Contacto</a>
+    </nav>
+  </header>
+  
+
+  <!-- Contenido del producto -->
+  <div class="glass-container">
+    <img src="BLUE RAZZ.png" alt="POD ELFBAR ICE KING 40K BLUE RAZZ">
+    <div class="info">
+      <h1>POD ELFBAR ICE KING 40K BLUE RAZZ</h1>
+      <p>Frescura intensa y estilo en cada calada. Disfrutá de un sabor refrescante con nuestro POD ELFBAR ICE KING 40K BLUE RAZZ.</p>
+      <a href="https://wa.me/5491122980332?text=Hola!%20estoy%20interesado%20en%20el%20POD ELFBAR ICE KING 40K BLUE RAZZ%20.%20%C2%BFMe%20podr%C3%ADas%20dar%20m%C3%A1s%20info%3F" target="_blank">Comprar por WhatsApp</a>
+    </div>
+  </div>
+<!-- Descripción Detallada con ícono -->
+<section class="descripcion">
+  <div class="contenido-descripcion">
+    <div class="icono-deco">
+      <i class="fas fa-snowflake"></i>
+    </div>
+    <h2>Descripción del Producto</h2>
+    <p>
+      El <strong>ElfBar Ice King 40.000 Puff Blue Razz Ice</strong> presenta un sabor vibrante de frambuesa azul con un intenso toque de mentol. La dulzura y la acidez de la frambuesa se equilibran con la frescura del mentol, creando una experiencia refrescante y satisfactoria. Es ideal para quienes buscan una combinación de sabores afrutados y refrescantes, perfecta para disfrutar en cualquier momento.
+    </p>
+    <p>
+      Proporciona <strong>5 niveles de ajuste de frialdad</strong>: desde el nivel 1 (frescura suave) hasta el nivel 5 (frescura intensa).
+    </p>
+
+    <h3>Elfbar 40K Ice King - Características:</h3>
+    <ul>
+      <li>Batería recargable de <strong>850mAh</strong></li>
+      <li><strong>20 ml</strong> de e-líquido precargado</li>
+      <li><strong>5%</strong> de concentración de nicotina</li>
+      <li>Alcanza hasta <strong>40.000 bocanadas</strong></li>
+      <li>Puerto de carga <strong>tipo C</strong></li>
+      <li><strong>Cinco modos ICE:</strong> Regulás la intensidad de frescura que más te gusta</li>
+    </ul>
+  </div>
+</section>
+</body>
+</html>
